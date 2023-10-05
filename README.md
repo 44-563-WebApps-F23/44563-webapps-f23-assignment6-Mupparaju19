@@ -3,5 +3,5 @@
 Introduction to Java Script and DOM
 Hosted on [Author]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Mupparaju19/author.html)
 [tips page]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Mupparaju19/tips.html)
-[cruise]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Mupparaju19/cruise.html)
+[cruise]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Mupparaju19/Cruise.html)
 
