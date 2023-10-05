@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>MMKAssignment6</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+ </head>
+<body>
+
+<h2>Murali shows tip amounts</h2>
+<form>
+
+      <label for="base_amt">Enter Base Amount</label>
+      <input type="number" id="base_amt" value=50>
+
+      <br>
+      <label for="tip">Enter the Tip Percent</label>
+      <input type="number" id="tip" name="tip" value=15>
+
+      <br>
+    <input type="button" value="Show tip" onclick="tips()">
+</form>
+<p id="result">Calculated tip is shown here</p>
+
+<script> 
+
+function tips (){
+
+    base_Val = parseFloat(document.getElementById("base_amt").value)
+    pertip = parseFloat(document.getElementById("tip").value)
+    
+    let myOutput=""
+    for(let i=0;i<5;i++)
+    {
+        const tipPercent = pertip + i * 4;
+        const calTip = (base_Val * tipPercent) / 100;
+        myOutput += `${tipPercent }%  is ${calTip };` ;
+        
+    }
+    
+    output = document.getElementById("result")
+    output.innerHTML = "Tips are:"+myOutput
+    
+}
+</script>
+<hr>
+
+<form>
+    <input type="radio" id="sum" name="ope" value="sum" onclick="chooseOp()">
+    <label for="sum">Sum</label></br>
+  
+    <input type="radio" id="diff" name="ope" value="difference" onclick="chooseOp()">
+    <label for="diff">diff</label></br>
+  
+    <input type="radio" id="mult" name="ope" value="product" onclick="chooseOp()">
+    <label for="mult">mult</label></br>
+</form>
+<br>
+<p id="btn">basic operations result is shown here</p>
+<script>
+    function chooseOp ()
+    {
+        console.log("Getting form values")
+        baseValue = parseFloat(document.getElementById("base_amt").value)
+        tipValue = parseFloat(document.getElementById("tip").value)
+        out = document.getElementById("btn")
+        if(document.getElementById("sum").checked){
+          out.innerHTML="Sum of "+baseValue+" and"+tipValue+" is "+(baseValue+tipValue)
+        }
+        else if(document.getElementById("diff").checked){
+          out.innerHTML="diff of "+baseValue+" and"+tipValue+" is "+(baseValue-tipValue)
+        }
+      
+        else if(document.getElementById("mult").checked){
+            out.innerHTML="product of "+baseValue+" and"+tipValue+" is "+(baseValue*tipValue)
+        }
+
+    }
+</script>
+</body>
+</html> 
